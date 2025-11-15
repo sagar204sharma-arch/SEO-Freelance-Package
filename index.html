@@ -136,26 +136,6 @@
             user-select: none;
         }
 
-        /* CASE STUDIES */
-        #case-studies {
-            padding: 60px 20px;
-            text-align: center;
-            background: #f9fafb;
-        }
-        .case-box {
-            background: #fff;
-            border-radius: 12px;
-            padding: 25px;
-            max-width: 800px;
-            margin: 20px auto;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .case-box img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
         /* FIXED FOOTER (small icons, black & white) */
         footer {
             position: fixed;
@@ -228,7 +208,6 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#clients">Clients</a>
-        <a href="#case-studies">Case Studies</a>
         <a class="btn" href="#contact">Hire Me</a>
     </nav>
 
@@ -241,8 +220,6 @@
     <section id="about">
         <h2>About Me</h2>
         <div id="about-content">
-            <!-- Make sure this file is available on your server or replace with a public URL -->
-            <img src="employee-working-marketing-setting.jpg" alt="About Image" />
             <div id="about-text">
                 <p>
                     I am a dedicated SEO Specialist with 4.8+ years of experience in On-Page,
@@ -283,7 +260,7 @@
     <section id="clients">
         <h2>Clients</h2>
 
-        <div class="arrow" onclick="scrollClients(-300)" aria-hidden="true">&#8592;</div>
+        <div class="arrow" onclick="scrollClients(-300)" aria-hidden="true">←</div>
 
         <div class="client-slider" id="clientSlider" aria-label="Client logos carousel">
             <img src="https://www.drparagtelang.com/assets/images/logo.webp" alt="Dr Parag Telang logo" />
@@ -294,35 +271,13 @@
             <img src="https://nalandaschool.org/wp-content/uploads/2021/01/logo-2.png" alt="Nalanda International School logo" />
         </div>
 
-        <div class="arrow" onclick="scrollClients(300)" aria-hidden="true">&#8594;</div>
+        <div class="arrow" onclick="scrollClients(300)" aria-hidden="true">→</div>
 
         <script>
             function scrollClients(val) {
                 document.getElementById('clientSlider').scrollLeft += val;
             }
         </script>
-    </section>
-
-    <!-- CASE STUDIES SECTION -->
-    <section id="case-studies">
-        <h2>Case Studies</h2>
-
-        <!-- Dr Parag Telang -->
-        <div class="case-box">
-            <h3>Dr Parag Telang – Plastic Surgeon in Mumbai</h3>
-            <p><strong>Campaign Keywords:</strong> Plastic Surgeon in Mumbai, Cosmetic Surgeon in Mumbai</p>
-            <img src="plastic surgeon in mumbai.png" alt="Plastic Surgeon SERP" />
-            <img src="cosmetic surgeon in mumbai.png" alt="Cosmetic Surgeon SERP" />
-        </div>
-
-        <!-- The Smile Mission -->
-        <div class="case-box">
-            <h3>The Smile Mission – Dental Clinic in Miami</h3>
-            <p><strong>Campaign Keywords:</strong> Veneers in Miami, Dental Implants in Miami</p>
-            <img src="Veeners.png" alt="Veneers SERP" />
-            <img src="dental implants.png" alt="Dental Implants SERP" />
-        </div>
-
     </section>
 
     <!-- FIXED FOOTER -->
