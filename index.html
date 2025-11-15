@@ -4,14 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sagar Moudgil – SEO Specialist Portfolio</title>
-
     <style>
         :root{
             --header-gradient: linear-gradient(135deg, #0f766e, #f59e0b);
             --black: #000;
             --white: #fff;
         }
-
         /* Reset & base */
         *{box-sizing:border-box}
         body {
@@ -19,15 +17,13 @@
             font-family: Arial, sans-serif;
             background: #fff;
             color: #000;
-            /* Reserve space for fixed footer (adjust if footer height changes) */
             padding-bottom: 120px;
         }
-
         /* HEADER */
         header {
             background: var(--header-gradient);
             color: var(--white);
-            padding: 70px 20px;
+            padding: 70px 20px 30px;
             text-align: center;
         }
         header h1 {
@@ -35,65 +31,77 @@
             font-size: 42px;
             font-weight: bold;
         }
-
+        header p {
+            margin-top: 8px;
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 600;
+        }
         /* NAVIGATION */
         nav {
             background: var(--black);
             padding: 12px;
             text-align: center;
+            margin-bottom: 15px;
         }
         nav a {
             color: var(--white);
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
+            font-size: 16px;
         }
-
-        /* BUTTONS (gradient) */
-        .btn {
-            display: inline-block;
+        nav a.btn {
+            background: var(--header-gradient);
             padding: 10px 22px;
             border-radius: 6px;
-            text-decoration: none;
             font-weight: bold;
             color: var(--white);
-            background: var(--header-gradient);
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            animation: blink-glow 2s infinite alternate;
+            box-shadow: 0 0 10px #f59e0b, 0 0 20px #f59e0b;
         }
-
+        nav a.btn:hover {
+            background: #de850a;
+            box-shadow: 0 0 20px #f59e0b, 0 0 35px #f59e0b;
+        }
+        @keyframes blink-glow {
+            0% {box-shadow: 0 0 5px #f59e0b, 0 0 10px #f59e0b;}
+            50% {box-shadow: 0 0 18px #f59e0b, 0 0 35px #f59e0b;}
+            100% {box-shadow: 0 0 5px #f59e0b, 0 0 10px #f59e0b;}
+        }
         /* ABOUT SECTION */
         #about {
-            padding: 60px 20px;
+            padding: 40px 20px 20px;
             text-align: center;
-        }
-        #about-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-        }
-        #about img {
-            width: 380px;
-            max-width: 100%;
-            border-radius: 12px;
+            max-width: 900px;
+            margin: 0 auto 15px;
         }
         #about-text {
-            max-width: 600px;
-            text-align: center;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
         }
-
+        #about-text strong {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 3px;
+            color: #333;
+        }
         /* SERVICES */
         #services {
-            padding: 60px 20px;
+            padding: 30px 20px 20px;
             text-align: center;
+            max-width: 900px;
+            margin: 0 auto 15px;
         }
         .services {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 35px;
+            gap: 20px;
         }
         .service-card {
             width: 270px;
@@ -101,28 +109,67 @@
             border-radius: 12px;
             background: #f3f4f6;
             text-align: center;
+            box-sizing: border-box;
+            transition: box-shadow 0.3s ease;
+            position: relative;
         }
         .service-card img {
             width: 80px;
             height: 80px;
+            margin-bottom: 15px;
         }
-
+        .service-card h3 {
+            margin: 0 0 10px;
+        }
+        .service-card p {
+            margin:0 0 15px;
+            font-size: 0.95rem;
+            color: #444;
+        }
+        .price-button {
+            background: var(--header-gradient);
+            color: var(--white);
+            padding: 10px 22px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 0 8px #f59e0b, 0 0 15px #f59e0b;
+            transition: box-shadow 0.3s ease;
+        }
+        .price-button:hover {
+            box-shadow: 0 0 15px #f59e0b, 0 0 25px #f59e0b;
+            background: #de850a;
+        }
         /* CLIENTS SECTION */
         #clients {
-            padding: 60px 20px;
+            padding: 30px 20px;
             text-align: center;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 15px;
+        }
+        .client-slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
         }
         .client-slider {
             display: flex;
-            overflow-x: auto;
             gap: 30px;
+            overflow-x: hidden;
             scroll-behavior: smooth;
-            padding: 20px;
+            padding: 20px 0;
+            width: 100%;
         }
         .client-slider img {
-            width: 150px;
+            width: 280px; /* Show only 3 images in viewport (900/3=300, leave gap ) */
             height: auto;
-            display:block;
+            display: block;
         }
         .arrow {
             cursor: pointer;
@@ -132,11 +179,20 @@
             color: var(--white);
             border-radius: 8px;
             margin: 10px;
-            display:inline-block;
+            display: inline-block;
             user-select: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
         }
-
-        /* FIXED FOOTER (small icons, black & white) */
+        .arrow.left {
+            left: 10px;
+        }
+        .arrow.right {
+            right: 10px;
+        }
+        /* FIXED FOOTER */
         footer {
             position: fixed;
             left: 0;
@@ -148,12 +204,11 @@
             text-align: center;
             z-index: 9999;
             box-shadow: 0 -2px 8px rgba(0,0,0,0.4);
-            height: 84px;               /* height used for content reservation */
+            height: 84px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
         .footer-inner {
             display: flex;
             gap: 20px;
@@ -161,7 +216,6 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-
         .footer-link {
             display: inline-flex;
             gap: 8px;
@@ -172,14 +226,12 @@
             font-size: 14px;
             opacity: 0.95;
         }
-
         .footer-link img {
             width: 16px;
             height: 16px;
             display: inline-block;
-            filter: invert(100%); /* ensure icon appears white */
+            filter: invert(100%);
         }
-
         .footer-copyright {
             width: 100%;
             text-align: center;
@@ -190,18 +242,41 @@
             left: 0;
             bottom: 6px;
         }
-
-        /* Smaller devices adjustments */
+        /* Responsive */
+        @media (max-width: 900px) {
+            .client-slider img {
+                width: 200px; /* Adjust image width for tablet */
+            }
+        }
         @media (max-width: 600px) {
             header h1 { font-size: 28px; }
             .service-card { width: 95%; }
             .footer-inner { gap: 12px; padding: 0 6px; }
             footer { height: 96px; padding-bottom: 18px; }
             body { padding-bottom: 130px; }
+            .client-slider img {
+                width: 150px; /* Mobile smaller images */
+            }
+            nav {
+                margin-bottom: 10px;
+            }
+            #about, #services, #clients {
+                margin-bottom: 10px;
+                padding: 20px 15px;
+            }
+            .services {
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Sagar Moudgil – SEO Specialist</h1>
+        <p>SEO That Drives Visibility, Traffic & Revenue!</p>
+    </header>
 
     <!-- NAVBAR -->
     <nav>
@@ -211,22 +286,17 @@
         <a class="btn" href="#contact">Hire Me</a>
     </nav>
 
-    <!-- HEADER -->
-    <header>
-        <h1>Sagar Moudgil – SEO Specialist</h1>
-    </header>
-
     <!-- ABOUT SECTION -->
     <section id="about">
         <h2>About Me</h2>
-        <div id="about-content">
-            <div id="about-text">
-                <p>
-                    I am a dedicated SEO Specialist with 4.8+ years of experience in On-Page,
-                    Technical SEO, Content Strategy & Off-Page optimization. I help brands grow
-                    faster with proven strategies, structured audits, and powerful ranking execution.
-                </p>
-            </div>
+        <div id="about-text">
+            <p>
+                I am a dedicated SEO Specialist with 4.8+ years of experience in On-Page,
+                Technical SEO, Content Strategy & Off-Page optimization. I help brands grow
+                faster with proven strategies, structured audits, and powerful ranking execution.
+            </p>
+            <p><strong>Industries Worked On:</strong> Healthcare, Education, IT, Ecommerce, Fintech and Service Based</p>
+            <p><strong>Locations Covered:</strong> USA, Canada and India</p>
         </div>
     </section>
 
@@ -239,18 +309,21 @@
                 <img src="https://ezmarketingtech.s3.amazonaws.com/img/On-PageSEO.svg" alt="On Page SEO" />
                 <h3>On-Page SEO</h3>
                 <p>Optimizing site architecture, internal linking, meta tags & content alignment.</p>
+                <button class="price-button">Rs 7000</button>
             </div>
 
             <div class="service-card">
                 <img src="https://ezmarketingtech.s3.amazonaws.com/img/Backlinks.svg" alt="Off Page SEO" />
                 <h3>Off-Page SEO</h3>
                 <p>Building powerful authority through high-quality backlinks & brand mentions.</p>
+                <button class="price-button">Rs 5000</button>
             </div>
 
             <div class="service-card">
                 <img src="https://ezmarketingtech.s3.amazonaws.com/img/Content.svg" alt="Content Writing" />
                 <h3>Content Writing</h3>
                 <p>Crafting SEO-friendly content that ranks and converts effortlessly.</p>
+                <button class="price-button">Rs 3000</button>
             </div>
 
         </div>
@@ -260,24 +333,33 @@
     <section id="clients">
         <h2>Clients</h2>
 
-        <div class="arrow" onclick="scrollClients(-300)" aria-hidden="true">←</div>
+        <div class="client-slider-container">
+            <div class="arrow left" onclick="scrollClients(-1)" aria-label="Scroll left">←</div>
 
-        <div class="client-slider" id="clientSlider" aria-label="Client logos carousel">
-            <img src="https://www.drparagtelang.com/assets/images/logo.webp" alt="Dr Parag Telang logo" />
-            <img src="https://www.wrightresearch.in/static/img/LOGO/new-logo.svg" alt="Wright Research logo" />
-            <img src="https://cdn11.bigcommerce.com/s-xmsah8/images/stencil/250x100/2018-07-10_1531291181__66107.original.original.png" alt="Redrunrite logo" />
-            <img src="https://havintha.in/cdn/shop/files/logo_47865573-e5e3-4176-a871-836b98b50e87.png?height=128&v=1671165804" alt="Havintha logo" />
-            <img src="https://thesmilemission.com/wp-content/uploads/2021/08/logo.png" alt="The Smile Mission logo" />
-            <img src="https://nalandaschool.org/wp-content/uploads/2021/01/logo-2.png" alt="Nalanda International School logo" />
+            <div class="client-slider" id="clientSlider" aria-label="Client logos carousel">
+                <img src="https://www.drparagtelang.com/assets/images/logo.webp" alt="Dr Parag Telang logo" />
+                <img src="https://www.wrightresearch.in/static/img/LOGO/new-logo.svg" alt="Wright Research logo" />
+                <img src="https://cdn11.bigcommerce.com/s-xmsah8/images/stencil/250x100/2018-07-10_1531291181__66107.original.original.png" alt="Redrunrite logo" />
+                <img src="https://havintha.in/cdn/shop/files/logo_47865573-e5e3-4176-a871-836b98b50e87.png?height=128&v=1671165804" alt="Havintha logo" />
+                <img src="https://thesmilemission.com/wp-content/uploads/2021/08/logo.png" alt="The Smile Mission logo" />
+                <img src="https://nalandaschool.org/wp-content/uploads/2021/01/logo-2.png" alt="Nalanda International School logo" />
+            </div>
+
+            <div class="arrow right" onclick="scrollClients(1)" aria-label="Scroll right">→</div>
         </div>
 
-        <div class="arrow" onclick="scrollClients(300)" aria-hidden="true">→</div>
-
         <script>
-            function scrollClients(val) {
-                document.getElementById('clientSlider').scrollLeft += val;
+            const slider = document.getElementById("clientSlider");
+            const clientWidth = 280 + 30; // image width + gap in px
+            // Scroll by exactly 3 clients width on arrow click
+            function scrollClients(direction) {
+                slider.scrollBy({
+                    left: direction * clientWidth * 3,
+                    behavior: 'smooth'
+                });
             }
         </script>
+
     </section>
 
     <!-- FIXED FOOTER -->
@@ -298,8 +380,6 @@
                 <span>+91-8860948088</span>
             </a>
         </div>
-
-        <div class="footer-copyright">© 2025 Sagar Moudgil. All Rights Reserved.</div>
     </footer>
 
 </body>
