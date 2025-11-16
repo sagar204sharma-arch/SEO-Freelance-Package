@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sagar Moudgil – SEO Specialist Portfolio</title>
+
     <style>
         :root{
             --header-gradient: linear-gradient(135deg, #0f766e, #f59e0b);
             --black: #000;
             --white: #fff;
         }
-        /* Reset & base */
+
         *{box-sizing:border-box}
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -19,6 +21,7 @@
             color: #000;
             padding-bottom: 120px;
         }
+
         /* HEADER */
         header {
             background: var(--header-gradient);
@@ -26,51 +29,53 @@
             padding: 70px 20px 30px;
             text-align: center;
         }
+
         header h1 {
             margin: 0;
             font-size: 42px;
             font-weight: bold;
         }
+
         header p {
             margin-top: 8px;
             font-size: 20px;
             font-style: italic;
             font-weight: 600;
         }
-        /* NAVIGATION */
+
+        /* NAVIGATION (FIXED & ALIGNED) */
         nav {
             background: var(--black);
-            padding: 12px;
-            text-align: center;
-            margin-bottom: 15px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
         }
+
         nav a {
             color: var(--white);
             text-decoration: none;
-            margin: 0 15px;
             font-weight: bold;
             font-size: 16px;
         }
+
         nav a.btn {
             background: var(--header-gradient);
             padding: 10px 22px;
             border-radius: 6px;
             font-weight: bold;
             color: var(--white);
-            text-decoration: none;
-            transition: background-color 0.3s ease;
             animation: blink-glow 2s infinite alternate;
             box-shadow: 0 0 10px #f59e0b, 0 0 20px #f59e0b;
         }
-        nav a.btn:hover {
-            background: #de850a;
-            box-shadow: 0 0 20px #f59e0b, 0 0 35px #f59e0b;
-        }
+
         @keyframes blink-glow {
             0% {box-shadow: 0 0 5px #f59e0b, 0 0 10px #f59e0b;}
             50% {box-shadow: 0 0 18px #f59e0b, 0 0 35px #f59e0b;}
             100% {box-shadow: 0 0 5px #f59e0b, 0 0 10px #f59e0b;}
         }
+
         /* ABOUT SECTION */
         #about {
             padding: 40px 20px 20px;
@@ -78,18 +83,21 @@
             max-width: 900px;
             margin: 0 auto 15px;
         }
+
         #about-text {
             font-size: 1.15rem;
             line-height: 1.6;
             max-width: 700px;
             margin: 0 auto;
         }
+
         #about-text strong {
             display: block;
             margin-top: 15px;
             margin-bottom: 3px;
             color: #333;
         }
+
         /* SERVICES */
         #services {
             padding: 30px 20px 20px;
@@ -97,80 +105,64 @@
             max-width: 900px;
             margin: 0 auto 15px;
         }
+
         .services {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
+
         .service-card {
             width: 270px;
             padding: 20px;
             border-radius: 12px;
             background: #f3f4f6;
             text-align: center;
-            box-sizing: border-box;
             transition: box-shadow 0.3s ease;
-            position: relative;
         }
+
         .service-card img {
             width: 80px;
             height: 80px;
             margin-bottom: 15px;
         }
-        .service-card h3 {
-            margin: 0 0 10px;
-        }
-        .service-card p {
-            margin:0 0 15px;
-            font-size: 0.95rem;
-            color: #444;
-        }
+
         .price-button {
             background: var(--header-gradient);
             color: var(--white);
             padding: 10px 22px;
-            border: none;
             border-radius: 6px;
             font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
             box-shadow: 0 0 8px #f59e0b, 0 0 15px #f59e0b;
-            transition: box-shadow 0.3s ease;
         }
-        .price-button:hover {
-            box-shadow: 0 0 15px #f59e0b, 0 0 25px #f59e0b;
-            background: #de850a;
-        }
+
         /* CLIENTS SECTION */
         #clients {
             padding: 30px 20px;
             text-align: center;
             max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 15px;
+            margin: 0 auto 15px;
         }
+
         .client-slider-container {
             position: relative;
             width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
             overflow: hidden;
         }
+
         .client-slider {
             display: flex;
             gap: 30px;
             overflow-x: hidden;
             scroll-behavior: smooth;
             padding: 20px 0;
-            width: 100%;
         }
+
         .client-slider img {
-            width: 280px; /* Show only 3 images in viewport (900/3=300, leave gap ) */
-            height: auto;
-            display: block;
+            width: 280px;
         }
+
         .arrow {
             cursor: pointer;
             font-size: 24px;
@@ -178,20 +170,14 @@
             background: var(--black);
             color: var(--white);
             border-radius: 8px;
-            margin: 10px;
-            display: inline-block;
-            user-select: none;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 10;
         }
-        .arrow.left {
-            left: 10px;
-        }
-        .arrow.right {
-            right: 10px;
-        }
+
+        .arrow.left { left: 10px; }
+        .arrow.right { right: 10px; }
+
         /* FIXED FOOTER */
         footer {
             position: fixed;
@@ -202,74 +188,35 @@
             color: var(--white);
             padding: 14px 18px;
             text-align: center;
-            z-index: 9999;
-            box-shadow: 0 -2px 8px rgba(0,0,0,0.4);
             height: 84px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .footer-inner {
             display: flex;
             gap: 20px;
             align-items: center;
-            justify-content: center;
             flex-wrap: wrap;
         }
+
         .footer-link {
             display: inline-flex;
             gap: 8px;
             align-items: center;
             color: var(--white);
             text-decoration: none;
-            font-weight: 500;
             font-size: 14px;
-            opacity: 0.95;
         }
+
         .footer-link img {
             width: 16px;
-            height: 16px;
-            display: inline-block;
             filter: invert(100%);
-        }
-        .footer-copyright {
-            width: 100%;
-            text-align: center;
-            margin-top: 6px;
-            color: #bfbfbf;
-            font-size: 13px;
-            position: absolute;
-            left: 0;
-            bottom: 6px;
-        }
-        /* Responsive */
-        @media (max-width: 900px) {
-            .client-slider img {
-                width: 200px; /* Adjust image width for tablet */
-            }
-        }
-        @media (max-width: 600px) {
-            header h1 { font-size: 28px; }
-            .service-card { width: 95%; }
-            .footer-inner { gap: 12px; padding: 0 6px; }
-            footer { height: 96px; padding-bottom: 18px; }
-            body { padding-bottom: 130px; }
-            .client-slider img {
-                width: 150px; /* Mobile smaller images */
-            }
-            nav {
-                margin-bottom: 10px;
-            }
-            #about, #services, #clients {
-                margin-bottom: 10px;
-                padding: 20px 15px;
-            }
-            .services {
-                gap: 15px;
-            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- HEADER -->
@@ -278,7 +225,7 @@
         <p>SEO That Drives Visibility, Traffic & Revenue!</p>
     </header>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR (FIXED ALIGNMENT) -->
     <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -286,97 +233,98 @@
         <a class="btn" href="#contact">Hire Me</a>
     </nav>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT -->
     <section id="about">
         <h2>About Me</h2>
         <div id="about-text">
-            <p>
-                I am a dedicated SEO Specialist with 4.8+ years of experience in On-Page,
-                Technical SEO, Content Strategy & Off-Page optimization. I help brands grow
-                faster with proven strategies, structured audits, and powerful ranking execution.
-            </p>
+            <p>I am a dedicated SEO Specialist with 4.8+ years of experience in On-Page,
+            Technical SEO, Content Strategy & Off-Page optimization.</p>
+
             <p><strong>Industries Worked On:</strong> Healthcare, Education, IT, Ecommerce, Fintech and Service Based</p>
             <p><strong>Locations Covered:</strong> USA, Canada and India</p>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- SERVICES -->
     <section id="services">
         <h2>My Services</h2>
+
         <div class="services">
 
             <div class="service-card">
-                <img src="https://ezmarketingtech.s3.amazonaws.com/img/On-PageSEO.svg" alt="On Page SEO" />
+                <img src="https://ezmarketingtech.s3.amazonaws.com/img/On-PageSEO.svg" />
                 <h3>On-Page SEO</h3>
-                <p>Optimizing site architecture, internal linking, meta tags & content alignment.</p>
+                <p>Optimizing site architecture & internal linking.</p>
                 <button class="price-button">Rs 7000</button>
             </div>
 
             <div class="service-card">
-                <img src="https://ezmarketingtech.s3.amazonaws.com/img/Backlinks.svg" alt="Off Page SEO" />
+                <img src="https://ezmarketingtech.s3.amazonaws.com/img/Backlinks.svg" />
                 <h3>Off-Page SEO</h3>
-                <p>Building powerful authority through high-quality backlinks & brand mentions.</p>
+                <p>Building high-quality backlinks & visibility.</p>
                 <button class="price-button">Rs 5000</button>
             </div>
 
             <div class="service-card">
-                <img src="https://ezmarketingtech.s3.amazonaws.com/img/Content.svg" alt="Content Writing" />
+                <img src="https://ezmarketingtech.s3.amazonaws.com/img/Content.svg" />
                 <h3>Content Writing</h3>
-                <p>Crafting SEO-friendly content that ranks and converts effortlessly.</p>
+                <p>Crafting SEO-friendly content that ranks.</p>
                 <button class="price-button">Rs 3000</button>
             </div>
 
         </div>
     </section>
 
-    <!-- CLIENTS SECTION -->
+    <!-- CLIENTS -->
     <section id="clients">
         <h2>Clients</h2>
 
         <div class="client-slider-container">
-            <div class="arrow left" onclick="scrollClients(-1)" aria-label="Scroll left">←</div>
 
-            <div class="client-slider" id="clientSlider" aria-label="Client logos carousel">
-                <img src="https://www.drparagtelang.com/assets/images/logo.webp" alt="Dr Parag Telang logo" />
-                <img src="https://www.wrightresearch.in/static/img/LOGO/new-logo.svg" alt="Wright Research logo" />
-                <img src="https://cdn11.bigcommerce.com/s-xmsah8/images/stencil/250x100/2018-07-10_1531291181__66107.original.original.png" alt="Redrunrite logo" />
-                <img src="https://havintha.in/cdn/shop/files/logo_47865573-e5e3-4176-a871-836b98b50e87.png?height=128&v=1671165804" alt="Havintha logo" />
-                <img src="https://thesmilemission.com/wp-content/uploads/2021/08/logo.png" alt="The Smile Mission logo" />
-                <img src="https://nalandaschool.org/wp-content/uploads/2021/01/logo-2.png" alt="Nalanda International School logo" />
+            <div class="arrow left" onclick="scrollClients(-1)">←</div>
+
+            <div class="client-slider" id="clientSlider">
+                <img src="https://www.drparagtelang.com/assets/images/logo.webp" />
+                <img src="https://www.wrightresearch.in/static/img/LOGO/new-logo.svg" />
+                <img src="https://cdn11.bigcommerce.com/s-xmsah8/images/stencil/250x100/2018-07-10_1531291181__66107.original.original.png" />
+                <img src="https://havintha.in/cdn/shop/files/logo_47865573-e5e3-4176-a871-836b98b50e87.png" />
+                <img src="https://thesmilemission.com/wp-content/uploads/2021/08/logo.png" />
+                <img src="https://nalandaschool.org/wp-content/uploads/2021/01/logo-2.png" />
             </div>
 
-            <div class="arrow right" onclick="scrollClients(1)" aria-label="Scroll right">→</div>
+            <div class="arrow right" onclick="scrollClients(1)">→</div>
+
         </div>
 
         <script>
             const slider = document.getElementById("clientSlider");
-            const clientWidth = 280 + 30; // image width + gap in px
-            // Scroll by exactly 3 clients width on arrow click
+            const clientWidth = 310;
+
             function scrollClients(direction) {
                 slider.scrollBy({
                     left: direction * clientWidth * 3,
-                    behavior: 'smooth'
+                    behavior: "smooth"
                 });
             }
         </script>
 
     </section>
 
-    <!-- FIXED FOOTER -->
+    <!-- FOOTER -->
     <footer>
         <div class="footer-inner">
-            <a class="footer-link" href="mailto:sagar204sharma@gmail.com" title="Email">
-                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email icon">
+            <a class="footer-link" href="mailto:sagar204sharma@gmail.com">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
                 <span>sagar204sharma@gmail.com</span>
             </a>
 
-            <a class="footer-link" href="https://www.linkedin.com/in/sagar-moudgil-a72314a0/" target="_blank" rel="noopener" title="LinkedIn">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn icon">
+            <a class="footer-link" href="https://www.linkedin.com/in/sagar-moudgil-a72314a0/">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
                 <span>LinkedIn Profile</span>
             </a>
 
-            <a class="footer-link" href="tel:+918860948088" title="Call">
-                <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone icon">
+            <a class="footer-link" href="tel:+918860948088">
+                <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
                 <span>+91-8860948088</span>
             </a>
         </div>
